@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Smart Campus Assistant</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <style>
+    body{
+      text-align: center;
+    }
+  </style>
+  <header class="site-header">
+    <div class="brand">
+      <h1>SMART CAMPUS</h1>
+      <img src="https://d13loartjoc1yn.cloudfront.net/upload/institute/images/large/220329010135_Screenshot_2022-03-29_124143.webp"width="500" height="500"
+    </div>
+    <nav class="nav-actions">
+      <button id="toggle-db" title="Toggle campus panel">Toggle Panel</button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <!-- Left: Campus info -->
+    <aside class="panel" id="campusPanel">
+      <div class="panel-search">
+        <input id="panelSearch" placeholder="Search campus (eg. library hours, cafeteria)" />
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Campus tabs">
+        <button class="tab active" data-tab="schedules" role="tab">Schedules</button>
+        <button class="tab" data-tab="facilities" role="tab">Facilities</button>
+        <button class="tab" data-tab="dining" role="tab">Dining</button>
+        <button class="tab" data-tab="library" role="tab">Library</button>
+        <button class="tab" data-tab="admin" role="tab">Administration</button>
+      </div>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="schedules">
+          <h3>Academic Schedule</h3>
+          <ul id="scheduleList"></ul>
+          <img src="https://mallareddyecw.com/assets/documents/ExaminationSchedules/B.TECH%20II%20YEAR%20II%20SEM%20MID%20II%20TERM%20TIMETABLE%20JUNE%202022.jpg"width="200" height="200"
+        </div>
+
+        <div class="tab-pane" id="facilities">
+          <h3>Facilities</h3>
+          <ul id="facilitiesList"></ul>
+          <img src="https://content3.jdmagicbox.com/comp/vijayawada/x3/0866px866.x866.210811183313.c7x3/catalogue/malla-reddy-university-hyderabad-ashok-nagar-vijayawada-computer-training-institutes-for-accounting-4fzeisf1mu.jpg" height="500"
+        </div>
+
+        <div class="tab-pane" id="dining">
+          <h3>Dining</h3>
+          <ul id="diningList"></ul>
+          <img src="https://d13loartjoc1yn.cloudfront.net/upload/1735463679Cafeteria.webp"width="500" height="500"
+        </div>
+
+        <div class="tab-pane" id="library">
+          <h3>Library</h3>
+          <ul id="libraryList"></ul>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvOG8ksKfped9GEHCq7PvrZjWvPKNmSAFfcw&s"
+         </div>
+
+        <div class="tab-pane" id="admin">
+          <h3>Administration</h3>
+          <ul id="adminList"></ul>
+          <img src="https://images.shiksha.com/mediadata/images/1684498558phpk6o7qH.jpeg"
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right: Chat -->
+    <section class="chat-area">
+      <div class="chat-header">
+        <h2>Ask the campus assistant</h2>
+        <p class="muted">Try: "When is spring semester start?" or "Where is the main library?"</p>
+      </div>
+
+      <div id="chatWindow" class="chat-window" aria-live="polite"></div>
+
+      <div class="quick-suggestions" id="quickSuggestions">
+        <button class="suggest">Library hours</button>
+        <a href="https://b.zmtcdn.com/data/menus/135/20990135/9506f658662e11e27fd5623494dfa7d2.png" target="_blank" rel="noopener">
+         <button class="suggest">Cafetaria menu</button>
+        <button class="suggest">Exam schedule</button>
+        <button class="suggest">Contact admin</button>
+      </div>
+
+      <form id="chatForm" class="chat-form" autocomplete="off">
+        <input id="userInput" name="message" placeholder="Type your question..." />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; Smart Campus Assistant — demo</small>
+  </footer>
+</body>
+</html>
